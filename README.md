@@ -1,85 +1,109 @@
+LLM‑Assisted PRA COREP Reporting Assistant (Prototype)
+Overview
+This project is a prototype AI-assisted regulatory reporting tool designed to simulate how Large Language Models (LLMs) can support UK banks preparing COREP submissions.
+
+The system accepts capital data and generates structured COREP-style outputs, applies validation checks, produces an audit trail, and exports a reporting template.
+
+It demonstrates an end‑to‑end pipeline:
+
+User input → COREP engine → Validation → Audit → Template → Excel export
+
+This aligns with the assignment objective of simulating automated regulatory reporting.
+
+Features
+COREP capital calculations
+Validation checks for regulatory consistency
+Audit trail explaining rule usage
+Template rendering (human-readable output)
+Excel report export
+Simple Streamlit UI
+Modular backend architecture
 System Flow
-The prototype simulates an AI assistant that helps prepare COREP regulatory reports.
-
-Flow:
-
-User input → API → COREP engine → Validation → Template → Excel export
-Step-by-step:
-
-User enters capital data (CET1, Tier1, Tier2, RWA)
-
-Backend calculates COREP values
-
-Validation checks regulatory consistency
-
-System generates audit trail
-
-COREP template is rendered
-
+User enters capital values (CET1, Tier1, Tier2, RWA)
+Backend computes COREP metrics
+Validation engine checks data consistency
+Audit trail records applied rules
+COREP template is generated
 Excel report is exported
+This simulates an AI-assisted regulatory workflow.
 
-This demonstrates automated regulatory reporting logic.
-
-2. Clean Project Structure
-Reorganize your folder like this:
-
+Project Structure
 corep-assistant/
 │
-├── app.py
+├── app.py                  # FastAPI backend entry point
 ├── README.md
 ├── requirements.txt
 │
-├── core/
-│   ├── schemas.py
-│   ├── validator.py
-│   ├── template_renderer.py
-│   ├── llm_engine.py
-│   ├── retrieval.py
+├── core/                   # Core logic modules
+│   ├── schemas.py          # Data models
+│   ├── validator.py        # Validation rules
+│   ├── template_renderer.py# COREP template builder
+│   ├── llm_engine.py       # Simulated AI engine
+│   ├── retrieval.py        # Regulatory text retrieval
 │
 ├── data/
-│   └── rules.txt
+│   └── rules.txt           # Regulatory rule dataset
 │
 ├── ui/
-│   └── ui.py
+│   └── ui.py               # Streamlit frontend
 │
 └── output/
-    └── corep_report.xlsx
---------------------------------------------------------------------------------------------------
-# LLM-Assisted PRA COREP Reporting Assistant
+    └── corep_report.xlsx   # Generated reports
+Installation
+1. Install Python
+Requires Python 3.10+
 
-## Overview
-This prototype demonstrates an AI-assisted regulatory reporting tool for COREP submissions.
+Check version:
 
-It converts financial scenarios into structured COREP outputs with validation and audit trail.
-
-## Features
-- COREP capital calculations
-- Regulatory validation
-- Audit trail generation
-- Template rendering
-- Excel export
-- Simple UI
-
-## How to run
-
-Install dependencies:
-
+python --version
+2. Create virtual environment (recommended)
+python -m venv venv
+venv\Scripts\activate
+3. Install dependencies
 pip install -r requirements.txt
-
-Run API:
+Running the Backend API
+Start FastAPI server:
 
 python -m uvicorn app:app --reload
-
-Open:
+Open browser:
 
 http://127.0.0.1:8000/docs
+You can test API requests directly from this interface.
 
-Run UI (optional):
+Running the UI
+python -m streamlit run ui/ui.py
+This launches a simple browser interface.
 
-streamlit run ui/ui.py
+Example Input
+CET1: 120
+Tier1: 150
+Tier2: 50
+RWA: 900
+The system generates:
 
-## Project Structure
-core/ → logic modules  
-data/ → regulatory rules  
-ui/ → frontend  
-output/ → generated reports
+COREP-style output
+Validation messages
+Audit trail
+Excel report
+Troubleshooting
+If uvicorn not found:
+
+pip install uvicorn
+If Streamlit not found:
+
+pip install streamlit
+If file path errors occur, verify that:
+
+rules.txt is inside the data/ folder
+ui.py is inside the ui/ folder
+Purpose of Prototype
+This system demonstrates how LLM-assisted tooling could:
+
+Reduce manual regulatory reporting effort
+Improve consistency and traceability
+Link outputs to rule-based audit logic
+Provide explainable reporting pipelines
+It is a simulation for educational purposes.
+
+Author
+Assignment prototype project.
