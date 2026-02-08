@@ -1,0 +1,5 @@
+CET1 is highest quality capital.
+Tier 1 includes CET1 plus AT1.
+Total Own Funds = Tier1 + Tier2.
+Capital ratio = Total Own Funds / RWA.
+Minimum capital ratio threshold is 8%.
