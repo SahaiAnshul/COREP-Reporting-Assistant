@@ -28,6 +28,8 @@ Features
 ●This simulates an AI-assisted regulatory workflow.
 
 Project Structure
+
+
 corep-assistant/
 │
 ├── app.py                  # FastAPI backend entry point
