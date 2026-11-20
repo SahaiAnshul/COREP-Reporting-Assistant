@@ -1,6 +1,6 @@
 LLM‑Assisted PRA COREP Reporting Assistant (Prototype)
 Overview
-This project is a prototype AI-assisted regulatory reporting tool designed to simulate how Large Language Models (LLMs) can support UK banks preparing COREP submissions.
+This project is a prototype AI-assisted regulatory reporting tool designed to simulate how Large Language Models (LLMs) can support banks preparing COREP submissions.
 
 The system accepts capital data and generates structured COREP-style outputs, applies validation checks, produces an audit trail, and exports a reporting template.
 
@@ -11,21 +11,21 @@ User input → COREP engine → Validation → Audit → Template → Excel expo
 This aligns with the assignment objective of simulating automated regulatory reporting.
 
 Features
-COREP capital calculations
-Validation checks for regulatory consistency
-Audit trail explaining rule usage
-Template rendering (human-readable output)
-Excel report export
-Simple Streamlit UI
-Modular backend architecture
-System Flow
-User enters capital values (CET1, Tier1, Tier2, RWA)
-Backend computes COREP metrics
-Validation engine checks data consistency
-Audit trail records applied rules
-COREP template is generated
-Excel report is exported
-This simulates an AI-assisted regulatory workflow.
+●COREP capital calculations
+●Validation checks for regulatory consistency
+●Audit trail explaining rule usage
+●Template rendering (human-readable output)
+●Excel report export
+●Simple Streamlit UI
+●Modular backend architecture
+●System Flow
+●User enters capital values (CET1, Tier1, Tier2, RWA)
+●Backend computes COREP metrics
+●Validation engine checks data consistency
+●Audit trail records applied rules
+●COREP template is generated
+●Excel report is exported
+●This simulates an AI-assisted regulatory workflow.
 
 Project Structure
 corep-assistant/
@@ -105,5 +105,3 @@ Link outputs to rule-based audit logic
 Provide explainable reporting pipelines
 It is a simulation for educational purposes.
 
-Author
-Assignment prototype project.
